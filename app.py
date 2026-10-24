@@ -11,11 +11,10 @@ def ask_gemini():
     user_query = data.get('query', '')
     system_prompt = data.get('system_prompt', '')
 
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={AQ_TOKEN}"
     
     headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {AQ_TOKEN}"
+        "Content-Type": "application/json"
     }
     
     gemini_data = {
