@@ -28,6 +28,9 @@ def ask_gemini():
     
     try:
         response = requests.post(url, headers=headers, json=gemini_data)
+        print("Google API Status Code:", response.status_code)
+        print("Google API Response Text:", response.text)
+        
         if response.status_code == 200:
             res_json = response.json()
             ai_reply = res_json['candidates'][0]['content']['parts'][0]['text']
@@ -35,6 +38,7 @@ def ask_gemini():
         else:
             return jsonify({"reply": "ချိတ်ဆက်မှု အဆင်မပြေပါဘူး နော်..."}), 500
     except Exception as e:
+        print("Exception Error:", str(e))
         return jsonify({"reply": "Error ဖြစ်သွားပါတယ်..."}), 500
 
 if __name__ == '__main__':
