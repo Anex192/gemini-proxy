@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-AQ_TOKEN = "AQ.Ab8RN6J37By9Q1sisuJPiVyx42IWeo9W0iLIRpmCDvJZzsFQLg"
+AQ_TOKEN = "AQ.Ab8RN6Ie0l3Fcqrr3vwpf5lDiPpgGLGiDKt0meRdJ1emymYkJQ"
 
 @app.route('/ask', methods=['POST'])
 def ask_gemini():
